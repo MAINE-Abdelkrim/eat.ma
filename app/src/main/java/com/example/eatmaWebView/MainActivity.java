@@ -34,6 +34,11 @@ WebView webView;
 
     @Override
     public void onBackPressed() {
-        webView.goBack();
+        if (webView.canGoBack()){
+            webView.goBack();
+        }else {
+            super.onBackPressed();
+        }
+
     }
 }
