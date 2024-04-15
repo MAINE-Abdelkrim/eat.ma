@@ -1,4 +1,4 @@
-package com.example.eatma;
+package com.example.eatmaWebView;
 
 import android.os.Bundle;
 import android.webkit.WebView;

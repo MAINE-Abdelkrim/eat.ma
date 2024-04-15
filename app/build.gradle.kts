@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.eatma"
+    namespace = "com.example.eatmaWebView"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.eatma"
+        applicationId = "com.example.eatmaWebView"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
