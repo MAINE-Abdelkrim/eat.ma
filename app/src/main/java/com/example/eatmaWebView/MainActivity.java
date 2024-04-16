@@ -29,7 +29,7 @@ WebView webView;
         WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("https://www.eat.ma/");
+        webView.loadUrl("");
     }
 
     @Override
