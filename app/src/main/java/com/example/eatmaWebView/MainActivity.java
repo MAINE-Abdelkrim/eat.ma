@@ -1,5 +1,7 @@
 package com.example.eatmaWebView;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -28,8 +30,24 @@ WebView webView;
         webView=findViewById(R.id.webViewV);
         WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
         webView.getSettings().setJavaScriptEnabled(true);
-        webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("");
+        webView.loadUrl("https://www.eat.ma/");
+//        webView.setWebViewClient(new WebViewClient());
+        webView.setWebViewClient(new WebViewClient() {
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                // If the URL is a link to another page in your website
+                if (url.startsWith("https://www.eat.ma/") ) {
+                    // Load the URL within the WebView
+                    view.loadUrl(url);
+                    return true;
+                } else {
+                    // URLs not matching your website will be opened in external browser
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                    startActivity(intent);
+                    return true;
+                }
+            }
+        });
     }
 
     @Override
